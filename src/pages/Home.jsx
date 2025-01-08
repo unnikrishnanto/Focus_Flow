@@ -7,20 +7,39 @@ export default function Home() {
   const [task, setTask] = useState('');
   
   {/*Task List */}
-  const [taskList, setTaskList] =  useState([]);
+  const [taskList, setTaskList] =  useState({todo:[], ongoing:[], completed:[]});
 
   {/*This method is called on form submission*/}  
   const handleSubmit = (event) => {
       event.preventDefault();
       if(task.trim() !== "") {
-        setTaskList([...taskList, task]);
+        setTaskList((prevTaskList) =>({
+            ...prevTaskList,
+            todo:[...prevTaskList.todo, task],
+        }));
         setTask('');
       }
     }
+
+  const moveTask = (currentCategory, targetCategory, taskToMove) =>{
+    setTaskList((prevTaskList) => {
+      // Remove task from currentCategory
+      const updatedCurrent = prevTaskList[currentCategory].filter((t) => t != taskToMove);
+
+      // Add task to target
+      const updatedtarget = [...prevTaskList[targetCategory], taskToMove];
+      
+      return {...prevTaskList, [currentCategory]: updatedCurrent, [targetCategory]: updatedtarget};
+    })
+  }
   
   {/*Function to remove the taks from list*/}
-  const removeTask = (index) => {
-    setTaskList(taskList.filter((t, i)=> i !== index));
+  const removeTask = (category, index) => {
+    setTaskList((prevTaskList) => ({
+      ...prevTaskList,
+      [category]: prevTaskList[category].filter((t, i) => i !== index),
+    }))
+      
   }  
 
   return (
@@ -44,16 +63,22 @@ export default function Home() {
             <div className='task-list-div'>    
                 <h2>To-Do Tasks</h2>
                 <ul>
-                {taskList.map((t, index) => {
+                {taskList.todo.map((t, index) => {
                    return(
                       <li key = {index}>
                       <div className='list-item'>
                         <p>{t}</p>
-                        <button className='list-button'>On Going</button>
-                        <button className='list-button' >Completed</button>
+                        <button
+                           className='list-button'
+                           onClick={()=> moveTask('todo', 'ongoing', t)}
+                        >On Going</button>
+                        <button
+                          className='list-button' 
+                          onClick={()=> moveTask('todo', 'completed', t)}
+                        >Completed</button>
                         <button
                            className='list-button remove-button'
-                           onClick={()=>removeTask(index)}
+                           onClick={()=>removeTask('todo', index)}
                         >Remove</button>
                       </div>
                     </li>
@@ -66,14 +91,29 @@ export default function Home() {
             <div className='task-list-div ongoing'>
                 <h2>Ongoing Tasks</h2>
                 <ul>
-                    <li>
-                      <div className='list-item'>
-                        <p>Complete LinkedIn </p>
-                        <button className='list-button'>Completed </button>
-                        <button className='list-button' >To Do</button>
-                        <button className='list-button remove-button'>Remove</button>
-                      </div>
+                  {taskList.ongoing.map((t, index) =>{
+                    return(
+                      <li key={index}>
+                        <div className='list-item'>
+                          <p>{t}</p>
+                          <button
+                            className='list-button'
+                            onClick={()=> moveTask('ongoing', 'completed', t)}
+                          >Completed </button>
+                          <button 
+                            className='list-button' 
+                            onClick={()=> moveTask('ongoing', 'todo', t)}
+                          >To Do</button>
+                          <button
+                            className='list-button remove-button'
+                            onClick={()=> removeTask('ongoing', index)}
+                          >Remove</button>
+                        </div>
                     </li>
+                    )
+                  })}
+
+                    
                 </ul>
             </div>
 
@@ -81,14 +121,27 @@ export default function Home() {
             <div className='task-list-div'>
                 <h2>Completed Tasks</h2>  
                 <ul>
-                    <li>
-                      <div className='list-item'>
-                        <p>Finish the project</p>
-                        <button className='list-button'>To do </button>
-                        <button className='list-button' >Ongoing</button>
-                        <button className='list-button remove-button'>Remove</button>
-                      </div>
-                    </li>
+                  {taskList.completed.map((t, index) => {
+                    return (
+                      <li index={index}>
+                        <div className='list-item'>
+                          <p>{t}</p>
+                          <button
+                            className='list-button'
+                            onClick={()=> moveTask('completed', 'todo', t)}
+                          >To do </button>
+                          <button 
+                            className='list-button' 
+                            onClick={()=> moveTask('completed', 'ongoing', t)}
+                          >Ongoing</button>
+                          <button 
+                            className='list-button remove-button'
+                            onClick={()=>removeTask('completed', index)}
+                          >Remove</button>
+                        </div>
+                      </li>
+                    )
+                  })}
                 </ul>
             </div>
 
