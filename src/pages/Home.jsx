@@ -5,13 +5,23 @@ export default function Home() {
   
   {/*UseState for storing task */}
   const [task, setTask] = useState('');
+  
+  {/*Task List */}
+  const [taskList, setTaskList] =  useState([]);
 
   {/*This method is called on form submission*/}  
   const handleSubmit = (event) => {
       event.preventDefault();
-      alert(task);
-      setTask('');
-  }
+      if(task.trim() !== "") {
+        setTaskList([...taskList, task]);
+        setTask('');
+      }
+    }
+  
+  {/*Function to remove the taks from list*/}
+  const removeTask = (index) => {
+    setTaskList(taskList.filter((t, i)=> i !== index));
+  }  
 
   return (
     <div className='home-div'>
@@ -20,27 +30,35 @@ export default function Home() {
             <form onSubmit={handleSubmit}>
                 <input 
                   type="text" 
-                  placeholder='Enter a task and click add button...'
+                  placeholder='Enter a task...'
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
                   />
                 <button className='add-button'>ADD TASK</button>
             </form>
         </div>
+
       {/*div that contains the 3 lists */}
         <div className='task-div'>
           {/*To Do List */}
             <div className='task-list-div'>    
                 <h2>To-Do Tasks</h2>
                 <ul>
-                <li>
+                {taskList.map((t, index) => {
+                   return(
+                      <li key = {index}>
                       <div className='list-item'>
-                        <p>Task 1 Doctors appointmant </p>
+                        <p>{t}</p>
                         <button className='list-button'>On Going</button>
                         <button className='list-button' >Completed</button>
-                        <button className='list-button remove-button'>Remove</button>
+                        <button
+                           className='list-button remove-button'
+                           onClick={()=>removeTask(index)}
+                        >Remove</button>
                       </div>
                     </li>
+                  )
+                })}
                 </ul>
             </div>
 
@@ -63,7 +81,7 @@ export default function Home() {
             <div className='task-list-div'>
                 <h2>Completed Tasks</h2>  
                 <ul>
-                <li>
+                    <li>
                       <div className='list-item'>
                         <p>Finish the project</p>
                         <button className='list-button'>To do </button>
