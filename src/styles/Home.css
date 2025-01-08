@@ -1,0 +1,113 @@
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:active{
+    opacity: 80%;
+}
+
+
+.home-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-form{
+    margin: 5px;
+   
+}
+
+form input {
+    height: 40px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+ }
+ 
+.add-button {
+     margin-left: 20px;
+     height: 40px;
+     width: 100px;
+     background-color:rgb(92, 179, 56);
+     border: none;
+     border-radius: 5px;
+}
+
+.task-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+
+.task-list-div{
+    width: 450px;
+    background-color: rgb(236, 232, 82);
+    border: 1px grey solid;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ongoing {
+    background-color: rgb(255, 193, 69);
+    transform: scale(1.02);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.4), 
+                        -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+.task-list-div h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    color: rgb(13, 17, 15);
+}
+
+
+.task-list-div ul{
+    width: 100%;
+    align-self: flex-start;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+}
+.task-list-div ul li{
+   list-style: none;
+   margin-bottom: 10px;
+}
+
+.list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.list-item p{
+    width: 200px;
+    color: rgb(40, 44, 237);
+}
+
+.list-button{
+    height: 25px;
+    width: 100px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color:rgb(231, 56, 121);
+}
+.remove-button{
+    background-color:rgb(251, 65, 65);
+}
