@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Focus_Flow/static/css/main.c6cfabfe.css",
+    "main.js": "/Focus_Flow/static/js/main.0a3cee7b.js",
+    "static/media/to_do_list_background.png": "/Focus_Flow/static/media/to_do_list_background.fc79f9b594daf3ca79d7.png",
+    "index.html": "/Focus_Flow/index.html",
+    "main.c6cfabfe.css.map": "/Focus_Flow/static/css/main.c6cfabfe.css.map",
+    "main.0a3cee7b.js.map": "/Focus_Flow/static/js/main.0a3cee7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6cfabfe.css",
+    "static/js/main.0a3cee7b.js"
+  ]
+}
