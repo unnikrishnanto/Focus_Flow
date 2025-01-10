@@ -42,6 +42,13 @@ export default function Home() {
       
   }  
 
+  const clearTasks = (category) => {
+    setTaskList((prevTaskList) => ({
+      ...prevTaskList,
+      [category]:[]
+    })
+  )}
+
   return (
     <div className='home-div'>
       {/* Receiving input for adding a task */}
@@ -85,6 +92,14 @@ export default function Home() {
                   )
                 })}
                 </ul>
+
+                {taskList.todo.length == 0 ? <span></span>:
+                    <button 
+                    className='clear-button'
+                    onClick={()=>clearTasks('todo')} 
+                    >Clear all</button>
+                }
+
             </div>
 
            {/*Ongoing task List */}
@@ -113,8 +128,14 @@ export default function Home() {
                     )
                   })}
 
-                    
-                </ul>
+                  </ul>
+                  
+                  {taskList.ongoing.length == 0 ? <span></span>:
+                    <button 
+                    className='clear-button'
+                    onClick={()=>clearTasks('ongoing')} 
+                    >Clear all</button>
+                  }  
             </div>
 
              {/*Completed Task List */}
@@ -143,6 +164,12 @@ export default function Home() {
                     )
                   })}
                 </ul>
+                {taskList.completed.length == 0 ? <span></span>:
+                    <button 
+                    className='clear-button' 
+                    onClick={()=>clearTasks('completed')}
+                    >Clear all</button>
+                }
             </div>
 
         </div>

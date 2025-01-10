@@ -111,3 +111,14 @@ form input {
 .remove-button{
     background-color:rgb(251, 65, 65);
 }
+
+.clear-button{
+    height: 25px;
+    min-width: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    justify-self: center;
+    background-color:rgb(211, 29, 44);
+    color: aliceblue;
+}
