@@ -71,7 +71,7 @@ export default function Home() {
                         <button
                            className='list-button'
                            onClick={()=> moveTask('todo', 'ongoing', t)}
-                        >On Going</button>
+                        >Ongoing</button>
                         <button
                           className='list-button' 
                           onClick={()=> moveTask('todo', 'completed', t)}
