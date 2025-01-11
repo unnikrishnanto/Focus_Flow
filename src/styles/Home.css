@@ -21,7 +21,7 @@ button:active{
 
 form input {
     height: 40px;
-    width: 500px;
+    width: 50vw;
     padding-left: 10px;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -48,7 +48,7 @@ form input {
 }
 
 .task-list-div{
-    width: 450px;
+    width: 30vw;
     background-color: rgb(236, 232, 82);
     border: 1px grey solid;
     border-radius: 10px;
@@ -91,13 +91,21 @@ form input {
     flex-direction: row;
     align-items: center;
     margin-left: 10px;
-    margin-right: 10px;
 }
 
 .list-item p{
-    width: 200px;
+    width: 40%;
     color: rgb(40, 44, 237);
     overflow-wrap: break-word;
+}
+
+.buttons-div{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
 }
 
 .list-button{
@@ -107,6 +115,10 @@ form input {
     border: none;
     border-radius: 20px;
     background-color:rgb(231, 56, 121);
+    word-wrap: break-word;
+    font-size: 12px;
+    font-family: "Roboto", serif;
+    font-weight: 600;
 }
 .remove-button{
     background-color:rgb(251, 65, 65);
@@ -122,3 +134,18 @@ form input {
     background-color:rgb(211, 29, 44);
     color: aliceblue;
 }
+
+@media screen and (max-width: 550px ) {
+    
+.task-div {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.task-list-div{
+    width: 70vw;
+}
+
+}
+

@@ -24,7 +24,7 @@ export default function Home() {
   const moveTask = (currentCategory, targetCategory, taskToMove) =>{
     setTaskList((prevTaskList) => {
       // Remove task from currentCategory
-      const updatedCurrent = prevTaskList[currentCategory].filter((t) => t != taskToMove);
+      const updatedCurrent = prevTaskList[currentCategory].filter((t) => t !== taskToMove);
 
       // Add task to target
       const updatedtarget = [...prevTaskList[targetCategory], taskToMove];
@@ -75,25 +75,27 @@ export default function Home() {
                       <li key = {index}>
                       <div className='list-item'>
                         <p>{t}</p>
-                        <button
-                           className='list-button'
-                           onClick={()=> moveTask('todo', 'ongoing', t)}
-                        >Ongoing</button>
-                        <button
-                          className='list-button' 
-                          onClick={()=> moveTask('todo', 'completed', t)}
-                        >Completed</button>
-                        <button
-                           className='list-button remove-button'
-                           onClick={()=>removeTask('todo', index)}
-                        >Remove</button>
+                        <div className='buttons-div'>
+                          <button
+                              className='list-button'
+                              onClick={()=> moveTask('todo', 'ongoing', t)}
+                          >Ongoing</button>
+                          <button
+                            className='list-button' 
+                            onClick={()=> moveTask('todo', 'completed', t)}
+                          >Completed</button>
+                          <button
+                              className='list-button remove-button'
+                              onClick={()=>removeTask('todo', index)}
+                          >Remove</button>
+                        </div>
                       </div>
                     </li>
                   )
                 })}
                 </ul>
 
-                {taskList.todo.length == 0 ? <span></span>:
+                {taskList.todo.length === 0 ? <span></span>:
                     <button 
                     className='clear-button'
                     onClick={()=>clearTasks('todo')} 
@@ -111,18 +113,20 @@ export default function Home() {
                       <li key={index}>
                         <div className='list-item'>
                           <p>{t}</p>
-                          <button
-                            className='list-button'
-                            onClick={()=> moveTask('ongoing', 'completed', t)}
-                          >Completed </button>
-                          <button 
-                            className='list-button' 
-                            onClick={()=> moveTask('ongoing', 'todo', t)}
-                          >To Do</button>
-                          <button
-                            className='list-button remove-button'
-                            onClick={()=> removeTask('ongoing', index)}
-                          >Remove</button>
+                          <div className='buttons-div'>
+                            <button
+                              className='list-button'
+                              onClick={()=> moveTask('ongoing', 'completed', t)}
+                            >Completed </button>
+                            <button 
+                              className='list-button' 
+                              onClick={()=> moveTask('ongoing', 'todo', t)}
+                            >To Do</button>
+                            <button
+                              className='list-button remove-button'
+                              onClick={()=> removeTask('ongoing', index)}
+                            >Remove</button>
+                          </div>    
                         </div>
                     </li>
                     )
@@ -130,7 +134,7 @@ export default function Home() {
 
                   </ul>
                   
-                  {taskList.ongoing.length == 0 ? <span></span>:
+                  {taskList.ongoing.length === 0 ? <span></span>:
                     <button 
                     className='clear-button'
                     onClick={()=>clearTasks('ongoing')} 
@@ -147,24 +151,26 @@ export default function Home() {
                       <li index={index}>
                         <div className='list-item'>
                           <p>{t}</p>
-                          <button
-                            className='list-button'
-                            onClick={()=> moveTask('completed', 'todo', t)}
-                          >To do </button>
-                          <button 
-                            className='list-button' 
-                            onClick={()=> moveTask('completed', 'ongoing', t)}
-                          >Ongoing</button>
-                          <button 
-                            className='list-button remove-button'
-                            onClick={()=>removeTask('completed', index)}
-                          >Remove</button>
+                          <div className='buttons-div'>
+                            <button
+                              className='list-button'
+                              onClick={()=> moveTask('completed', 'todo', t)}
+                            >To do </button>
+                            <button 
+                              className='list-button' 
+                              onClick={()=> moveTask('completed', 'ongoing', t)}
+                            >Ongoing</button>
+                            <button 
+                              className='list-button remove-button'
+                              onClick={()=>removeTask('completed', index)}
+                            >Remove</button>
+                          </div>
                         </div>
                       </li>
                     )
                   })}
                 </ul>
-                {taskList.completed.length == 0 ? <span></span>:
+                {taskList.completed.length === 0 ? <span></span>:
                     <button 
                     className='clear-button' 
                     onClick={()=>clearTasks('completed')}

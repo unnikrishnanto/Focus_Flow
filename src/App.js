@@ -7,6 +7,8 @@ function App() {
     <h1>FOCUS FLOW</h1>
     <Home/ > 
    </div>
+
+   
   );
 }
 

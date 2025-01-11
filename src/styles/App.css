@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 body{
     background-image: url("../images/to_do_list_background.png");
-    background-size: cover;
+    background-size: cover; /* Ensures the image covers the whole area */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; 
     display: flex;
     flex-direction: column;
     align-items: center;
