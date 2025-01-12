@@ -119,6 +119,7 @@ form input {
     font-size: 12px;
     font-family: "Roboto", serif;
     font-weight: 600;
+    color: aliceblue;
 }
 .remove-button{
     background-color:rgb(251, 65, 65);
@@ -131,8 +132,8 @@ form input {
     border: none;
     border-radius: 20px;
     justify-self: center;
-    background-color:rgb(211, 29, 44);
     color: aliceblue;
+    background-color:rgb(211, 29, 44);
 }
 
 @media screen and (max-width: 550px ) {
