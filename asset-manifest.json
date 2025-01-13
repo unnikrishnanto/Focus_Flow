@@ -1,14 +1,13 @@
 {
   "files": {
-    "main.css": "/Focus_Flow/static/css/main.ee5e9e13.css",
-    "main.js": "/Focus_Flow/static/js/main.33e89fb1.js",
-    "static/media/to_do_list_background.png": "/Focus_Flow/static/media/to_do_list_background.fc79f9b594daf3ca79d7.png",
+    "main.css": "/Focus_Flow/static/css/main.d44b8027.css",
+    "main.js": "/Focus_Flow/static/js/main.8e5f4725.js",
     "index.html": "/Focus_Flow/index.html",
-    "main.ee5e9e13.css.map": "/Focus_Flow/static/css/main.ee5e9e13.css.map",
-    "main.33e89fb1.js.map": "/Focus_Flow/static/js/main.33e89fb1.js.map"
+    "main.d44b8027.css.map": "/Focus_Flow/static/css/main.d44b8027.css.map",
+    "main.8e5f4725.js.map": "/Focus_Flow/static/js/main.8e5f4725.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee5e9e13.css",
-    "static/js/main.33e89fb1.js"
+    "static/css/main.d44b8027.css",
+    "static/js/main.8e5f4725.js"
   ]
 }
