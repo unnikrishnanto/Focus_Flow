@@ -1,5 +1,6 @@
+
 button:hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 button:active{
@@ -32,9 +33,11 @@ form input {
      margin-left: 20px;
      height: 40px;
      width: 100px;
-     background-color:rgb(92, 179, 56);
+     background-color: #197278;
+     color:#ffecd1;
      border: none;
      border-radius: 5px;
+     font-weight: 800;
 }
 
 .task-div {
@@ -49,7 +52,7 @@ form input {
 
 .task-list-div{
     width: 30vw;
-    background-color: rgb(236, 232, 82);
+    background-color: #d9ed92;
     border: 1px grey solid;
     border-radius: 10px;
     margin: 10px;
@@ -60,15 +63,16 @@ form input {
 }
 
 .ongoing {
-    background-color: rgb(255, 193, 69);
+    background-color: #d9ed92;
+    color: rgb(247, 237, 226);
     transform: scale(1.02);
     box-shadow: 5px 10px 10px rgba(240, 238, 238, 0.4), 
                         -5px -5px 10px rgba(38, 37, 37, 0.8);
 }
 
 .task-list-div h2{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 800;
+    font-family: "Matemasie", sans-serif;
+    font-weight: 900;
     color: rgb(13, 17, 15);
 }
 
@@ -91,11 +95,20 @@ form input {
     flex-direction: row;
     align-items: center;
     margin-left: 10px;
+    border: 2px rgb(203, 211, 200) solid;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px rgba(240, 238, 238, 0.4), 
+                        -5px -5px 10px rgba(38, 37, 37, 0.8);
+}
+.list-item:hover{
+    transform: rotate(2deg);
 }
 
 .list-item p{
     width: 40%;
-    color: rgb(40, 44, 237);
+    color: #197278;
     overflow-wrap: break-word;
 }
 
@@ -114,7 +127,7 @@ form input {
     margin: 5px;
     border: none;
     border-radius: 20px;
-    background-color:rgb(231, 56, 121);
+    background-color: #184e77;
     word-wrap: break-word;
     font-size: 12px;
     font-family: "Roboto", serif;
@@ -122,7 +135,7 @@ form input {
     color: aliceblue;
 }
 .remove-button{
-    background-color:rgb(251, 65, 65);
+    background-color: #880d1e;
 }
 
 .clear-button{
@@ -132,8 +145,8 @@ form input {
     border: none;
     border-radius: 20px;
     justify-self: center;
-    color: aliceblue;
-    background-color:rgb(211, 29, 44);
+    color: rgb(255, 253, 208);
+    background-color: #105b4e;
 }
 
 @media screen and (max-width: 550px ) {

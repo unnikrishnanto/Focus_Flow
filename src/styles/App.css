@@ -1,18 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lilita+One&family=Matemasie&family=Rubik+Vinyl&display=swap');
+
+
 body{
-    background-image: url("../images/to_do_list_background.png");
-    background-size: cover; /* Ensures the image covers the whole area */
-    background-position: center center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; 
+    /* background-image: url("../images/to_do_list_background.g");
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;  */
+    background-color: #168aad;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 h1{
+    font-family:"Rubik Vinyl";
     font-size: 40px;
-    color: rgb(208, 219, 163);
-    font-family: "Prata", serif;
+    color: #d9ed92;
+   
  
 }
